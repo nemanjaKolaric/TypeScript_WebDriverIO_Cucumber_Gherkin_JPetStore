@@ -2,27 +2,27 @@ import actions from "../utils/actions"
 
 class ItemsPage {
 
-    get itemAngelfish() {
+    public get itemAngelfish() {
         return $('//*[.="Angelfish"]/preceding-sibling::td/a')
     }
 
-    get addToCartItemLargeAngelfish() {
+    public get addToCartItemLargeAngelfish() {
         return $('//*[normalize-space(text())="Large Angelfish"]/following-sibling::td[2]')
     }
 
-    get quantityOfAngelFish() {
+    public get quantityOfAngelFish() {
         return $('//*[normalize-space(text())="Large Angelfish"]/following-sibling::td[2]/input')
     }
 
-    get priceOfAngelFish() {
+    public get priceOfAngelFish() {
         return $('//*[normalize-space(text())="Large Angelfish"]/following-sibling::td[3]')
     }
 
-    get totalPrice() {
+    public get totalPrice() {
         return $('//*[@value="Update Cart"]/parent::td')
     }
 
-    get updateCart() {
+    public get updateCart() {
         return $('[name="updateCartQuantities"]')
     }
 
@@ -30,32 +30,40 @@ class ItemsPage {
         return $('a.Button:nth-child(3)')
     }
 
-    get itemBulldog() {
+    public get itemBulldog() {
         return $('//*[.="Bulldog"]/preceding-sibling::td/a')
     }
 
-    get addToCartMaleAdultBulldog() {
+    public get addToCartMaleAdultBulldog() {
         return $('//*[normalize-space(text())="Male Adult Bulldog"]/following-sibling::td[2]')
     }
 
-    get itemFinch() {
+    public get itemFinch() {
         return $('//*[.="Finch"]/preceding-sibling::td/a')
     }
 
-    get addToCartAdultMaleFinch() {
+    public get addToCartAdultMaleFinch() {
         return $('//*[normalize-space(text())="Adult Male Finch"]/following-sibling::td[2]')
     }
 
-    get priceOfMaleAdultBulldog() {
+    public get priceOfMaleAdultBulldog() {
         return $('//*[normalize-space(text())="Male Adult Bulldog"]/following-sibling::td[3]')
     }
 
-    get priceOfAdultMaleFinch() {
+    public get priceOfAdultMaleFinch() {
         return $('//*[normalize-space(text())="Adult Male Finch"]/following-sibling::td[3]')
     }
 
-    get removeAdultMaleFinch() {
+    public get removeAdultMaleFinch() {
         return $('//*[normalize-space(text())="Adult Male Finch"]/following-sibling::td[5]')
+    }
+
+    public get returnToMainMenuLink(){
+        return $('#BackLink')
+    }
+
+    async searchedContent(content) {
+        return $('//*[.="' + content + '"]')
     }
 }
 export default new ItemsPage()

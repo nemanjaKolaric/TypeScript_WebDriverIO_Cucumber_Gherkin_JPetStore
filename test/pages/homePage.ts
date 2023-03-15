@@ -63,6 +63,14 @@ class HomePage {
         return $('#BackLink')
     }
 
+    public get inputSearchField() {
+        return $('[name="keyword"]')
+    }
+
+    public get searchButton() {
+        return $('[name="searchProducts"]')
+    }
+
     async goToLoginPage() {
         await browser.url(`${process.env.BASE_URL}`)
         await actions.clickOn(this.enterTheStore)
@@ -133,9 +141,14 @@ class HomePage {
 
         const textAdultMaleFinch = await itemsPage.priceOfAdultMaleFinch.getText()
         const adultMaleFinchPrice = parseFloat(textAdultMaleFinch.replace("$", ""))
-        
+
         await actions.clickOn(itemsPage.removeAdultMaleFinch);
         totalAmount = (totalAmount - adultMaleFinchPrice).toFixed(2)
+    }
+
+    async searchContent(content: string) {
+        await actions.typeIn(this.inputSearchField, content)
+        await actions.clickOn(this.searchButton)
     }
 }
 export default new HomePage()

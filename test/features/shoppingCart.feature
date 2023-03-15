@@ -9,8 +9,8 @@ Feature: Shopping Cart functionality
         Given user is on home page
         When user order three products
         Then the total amount is correct
-    
+
     Scenario: User can remove one product from the shopping cart
         Given user is on home page
-        When user remove one product
+        When user order three and remove one product from shopping cart
         Then the total amount is correct

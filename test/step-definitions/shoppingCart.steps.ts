@@ -13,6 +13,6 @@ When('user order three products', async () => {
     await homePage.orderThreeItems()
 })
 
-When('user remove one product', async () => {
+When('user order three and remove one product from shopping cart', async () => {
     await homePage.removeOneItemFromShoppingCart()
 })

@@ -1,6 +1,6 @@
 Feature: Checkout functionality
 
-    Scenario: User is able to buy one item
+    Scenario: User successfully orders the product
         Given user is on home page
         When user buys one item
         Then the item has been purchased
